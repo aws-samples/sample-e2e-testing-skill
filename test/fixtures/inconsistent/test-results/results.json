@@ -1,0 +1,329 @@
+{
+  "config": {
+    "configFile": "/home/user/app/playwright.config.ts",
+    "rootDir": "/home/user/app/tests",
+    "version": "1.50.0",
+    "workers": 1,
+    "projects": [
+      { "id": "setup", "name": "setup", "testDir": "/home/user/app/tests", "testMatch": ["/.*\\.setup\\.ts/"], "retries": 0, "timeout": 30000 },
+      { "id": "chromium", "name": "chromium", "testDir": "/home/user/app/tests", "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"], "retries": 0, "timeout": 30000 }
+    ]
+  },
+  "suites": [
+    {
+      "title": "auth.setup.ts",
+      "file": "auth.setup.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "authenticate as user",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                { "workerIndex": 0, "parallelIndex": 0, "status": "passed", "duration": 1790, "errors": [], "stdout": [], "stderr": [], "retry": 0, "startTime": "2026-09-28T02:30:00.402Z", "annotations": [], "attachments": [] }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b1c2d3e4f5a60718293a-0b1c2d3e4f5a67890123",
+          "file": "auth.setup.ts",
+          "line": 6,
+          "column": 6
+        }
+      ]
+    },
+    {
+      "title": "e2e/cart/add-to-cart.spec.ts",
+      "file": "e2e/cart/add-to-cart.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "商品をカートに追加できる",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                { "workerIndex": 0, "parallelIndex": 0, "status": "passed", "duration": 1210, "errors": [], "stdout": [], "stderr": [], "retry": 0, "startTime": "2026-09-28T02:30:02.311Z", "annotations": [], "attachments": [] }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c2d3e4f5a60718293a0b-1c2d3e4f5a678901234a",
+          "file": "e2e/cart/add-to-cart.spec.ts",
+          "line": 6,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/login/login-with-valid-credentials-copy.spec.ts",
+      "file": "e2e/login/login-with-valid-credentials-copy.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REQ-001-2 正しい資格情報でログインできる",
+          "ok": true,
+          "tags": ["REQ-001-2"],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                { "workerIndex": 0, "parallelIndex": 0, "status": "passed", "duration": 1322, "errors": [], "stdout": [], "stderr": [], "retry": 0, "startTime": "2026-09-28T02:30:03.605Z", "annotations": [], "attachments": [] }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d3e4f5a60718293a0b1c-2d3e4f5a678901234ab5",
+          "file": "e2e/login/login-with-valid-credentials-copy.spec.ts",
+          "line": 7,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/login/login-with-valid-credentials.spec.ts",
+      "file": "e2e/login/login-with-valid-credentials.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REQ-001-2 正しい資格情報でログインできる",
+          "ok": true,
+          "tags": ["REQ-001-2"],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                { "workerIndex": 0, "parallelIndex": 0, "status": "passed", "duration": 1298, "errors": [], "stdout": [], "stderr": [], "retry": 0, "startTime": "2026-09-28T02:30:05.014Z", "annotations": [], "attachments": [] }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4f5a60718293a0b1c2d-3e4f5a678901234ab5c6",
+          "file": "e2e/login/login-with-valid-credentials.spec.ts",
+          "line": 6,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/login/mismatched-ids.spec.ts",
+      "file": "e2e/login/mismatched-ids.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REQ-001-2 名前だけに ID がある",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                { "workerIndex": 0, "parallelIndex": 0, "status": "failed", "duration": 5040, "error": { "message": "Error: expect(locator).toBeVisible() failed" }, "errors": [{ "message": "Error: expect(locator).toBeVisible() failed" }], "stdout": [], "stderr": [], "retry": 0, "startTime": "2026-09-28T02:30:06.400Z", "annotations": [], "attachments": [] }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f5a60718293a0b1c2d3e-4f5a678901234ab5c6d7",
+          "file": "e2e/login/mismatched-ids.spec.ts",
+          "line": 8,
+          "column": 5
+        },
+        {
+          "title": "tag だけに ID がある",
+          "ok": false,
+          "tags": ["REQ-001-2"],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                { "workerIndex": 0, "parallelIndex": 0, "status": "failed", "duration": 5033, "error": { "message": "Error: expect(locator).toBeVisible() failed" }, "errors": [{ "message": "Error: expect(locator).toBeVisible() failed" }], "stdout": [], "stderr": [], "retry": 0, "startTime": "2026-09-28T02:30:11.512Z", "annotations": [], "attachments": [] }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a60718293a0b1c2d3e4f-5a678901234ab5c6d7e8",
+          "file": "e2e/login/mismatched-ids.spec.ts",
+          "line": 14,
+          "column": 5
+        },
+        {
+          "title": "REQ-001-2 名前と tag の ID が異なる",
+          "ok": false,
+          "tags": ["REQ-001-3"],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                { "workerIndex": 0, "parallelIndex": 0, "status": "failed", "duration": 5029, "error": { "message": "Error: expect(locator).toBeVisible() failed" }, "errors": [{ "message": "Error: expect(locator).toBeVisible() failed" }], "stdout": [], "stderr": [], "retry": 0, "startTime": "2026-09-28T02:30:16.611Z", "annotations": [], "attachments": [] }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0718293a0b1c2d3e4f5a-678901234ab5c6d7e8f9",
+          "file": "e2e/login/mismatched-ids.spec.ts",
+          "line": 20,
+          "column": 5
+        },
+        {
+          "title": "REQ-001-2 tag が 2 つある",
+          "ok": false,
+          "tags": ["REQ-001-2", "REQ-001-3"],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                { "workerIndex": 0, "parallelIndex": 0, "status": "failed", "duration": 5037, "error": { "message": "Error: expect(locator).toBeVisible() failed" }, "errors": [{ "message": "Error: expect(locator).toBeVisible() failed" }], "stdout": [], "stderr": [], "retry": 0, "startTime": "2026-09-28T02:30:21.713Z", "annotations": [], "attachments": [] }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "18293a0b1c2d3e4f5a67-8901234ab5c6d7e8f90a",
+          "file": "e2e/login/mismatched-ids.spec.ts",
+          "line": 26,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/login/old-login.spec.ts",
+      "file": "e2e/login/old-login.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ログインできる",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                { "workerIndex": 0, "parallelIndex": 0, "status": "failed", "duration": 5011, "error": { "message": "Error: expect(page).toHaveURL(expected) failed" }, "errors": [{ "message": "Error: expect(page).toHaveURL(expected) failed" }], "stdout": [], "stderr": [], "retry": 0, "startTime": "2026-09-28T02:30:26.820Z", "annotations": [], "attachments": [] }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "293a0b1c2d3e4f5a6789-01234ab5c6d7e8f90a1b",
+          "file": "e2e/login/old-login.spec.ts",
+          "line": 6,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/login/password-reset.spec.ts",
+      "file": "e2e/login/password-reset.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REQ-009-1 パスワードを再設定できる",
+          "ok": false,
+          "tags": ["REQ-009-1"],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                { "workerIndex": 0, "parallelIndex": 0, "status": "failed", "duration": 5052, "error": { "message": "Error: expect(locator).toBeVisible() failed" }, "errors": [{ "message": "Error: expect(locator).toBeVisible() failed" }], "stdout": [], "stderr": [], "retry": 0, "startTime": "2026-09-28T02:30:31.902Z", "annotations": [], "attachments": [] }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3a0b1c2d3e4f5a678901-234ab5c6d7e8f90a1b2c",
+          "file": "e2e/login/password-reset.spec.ts",
+          "line": 6,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/stray.spec.ts",
+      "file": "e2e/stray.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "商品一覧を表示できる",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                { "workerIndex": 0, "parallelIndex": 0, "status": "passed", "duration": 980, "errors": [], "stdout": [], "stderr": [], "retry": 0, "startTime": "2026-09-28T02:30:37.011Z", "annotations": [], "attachments": [] }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4b1c2d3e4f5a67890123-4ab5c6d7e8f90a1b2c3d",
+          "file": "e2e/stray.spec.ts",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-28T02:30:00.000Z",
+    "duration": 38104.6,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

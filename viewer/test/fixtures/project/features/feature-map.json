@@ -1,0 +1,37 @@
+{
+  "app": "会員サイト",
+  "roles": ["一般ユーザー(既定)", "管理者"],
+  "baseline_data": "一般ユーザー user@example.com / 管理者 admin@example.com",
+  "features": [
+    {
+      "name": "ログイン",
+      "slug": "login",
+      "status": "テスト済み",
+      "summary": "会員がメールアドレスとパスワードでサインインし、ダッシュボードを開く",
+      "includes": ["ログイン画面", "5 回失敗したときのロック", "ロール: 一般/管理者, \"引用\" を含む"],
+      "excludes": ["パスワードの再設定(パスワード再設定の機能に入れた)"],
+      "sources": ["docs/requirements.md 3.2", "探索で /login の画面を確認"],
+      "questions": ["資料にある「ソーシャルログイン」が画面に無い", "ロックの解除の手順(探索では確かめられなかった)"]
+    },
+    {
+      "name": "商品検索",
+      "slug": "product-search",
+      "status": "定義済み",
+      "summary": "キーワードで商品を探し、名前が前方一致する商品を一覧に出す",
+      "includes": ["商品一覧の検索欄"],
+      "decided": "2026-09-30 ユーザー判断(全文検索は対象外)"
+    },
+    { "name": "お知らせ", "slug": "news", "status": "未着手", "summary": "会員がお知らせの一覧と本文を読む", "includes": ["お知らせ一覧", "お知らせの本文"] },
+    {
+      "name": "メディア・ファイル",
+      "slug": "media-files",
+      "status": "対象外",
+      "summary": "画像やファイルをアップロードして記事に添付する",
+      "includes": ["アップロード画面"],
+      "decided": "2026-08-31 ユーザー判断(アップロード無効のため)"
+    }
+  ],
+  "candidates": [
+    { "name": "ソーシャルログイン", "slug": "social-login", "reason": "資料にあるが画面に無い", "sources": ["docs/requirements.md 3.4"] }
+  ]
+}

@@ -1,0 +1,16 @@
+# playwright-cli の作業成果物(スナップショット・コンソールログ)
+.playwright-cli/
+
+node_modules/
+
+# CI の JUnit レポート(ローカルで同じコマンドを実行しても生成される)
+junit.xml
+
+# 配布用アーカイブ(pnpm run archive の出力)
+dist/
+
+# エージェントのワークフローが書く調査報告書とレビューの成果物
+.agents/
+
+# macOS のメタデータ
+.DS_Store

@@ -26,6 +26,10 @@ Contributions via pull requests are much appreciated. Before sending us a pull r
 1. You are working against the latest source on the *main* branch.
 2. You check existing open, and recently merged, pull requests to make sure someone else hasn't addressed the problem already.
 3. You open an issue to discuss any significant work - we would hate for your time to be wasted.
+4. `pnpm run lint`, `pnpm run typecheck`, and `pnpm test` pass at the repository root.
+5. If you changed `viewer/` or `skills/e2e-testing/scripts/e2e-trace.mts`, you ran `pnpm run bundle` in `viewer/`,
+   committed the regenerated `skills/e2e-testing/viewer/build.mjs` together with the source, and `pnpm run typecheck`
+   and `pnpm test` pass in `viewer/`. See [AGENTS.md](AGENTS.md) for the details.
 
 To send us a pull request, please:
 

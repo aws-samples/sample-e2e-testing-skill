@@ -1,0 +1,27 @@
+# タグの push で配布用 zip(README・LICENSE・THIRD-PARTY-LICENSES・スキル一式。`pnpm run archive` と同じ)を作り、
+# GitHub Release にアセットとして添付する。リリース名はタグ名。
+# archive スクリプトはシェルと git だけで依存を使わないので、pnpm を入れずに npm で実行する
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - run: npm run archive
+        env:
+          ARCHIVE_VERSION: ${{ github.ref_name }}
+      - run: gh release create "$TAG" dist/*.zip --title "$TAG" --notes "配布用 zip(README とスキル一式)。展開して README の手順でインストールする。"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}

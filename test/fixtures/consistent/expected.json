@@ -1,0 +1,116 @@
+{
+  "missingIds": [],
+  "tests": [
+    {
+      "path": "tests/e2e/login/lock-after-five-failures.spec.ts",
+      "line": 7,
+      "name": "REQ-002-1 5回失敗するとロックされる",
+      "feature": "ログイン",
+      "nameId": "REQ-002-1",
+      "tagIds": [
+        "REQ-002-1"
+      ],
+      "classification": "bound",
+      "boundTo": "REQ-002-1"
+    },
+    {
+      "path": "tests/e2e/login/login-case-insensitive-email.spec.ts",
+      "line": 7,
+      "name": "REQ-001-10 メールアドレスの大文字小文字を区別せずにログインできる",
+      "feature": "ログイン",
+      "nameId": "REQ-001-10",
+      "tagIds": [
+        "REQ-001-10"
+      ],
+      "classification": "bound",
+      "boundTo": "REQ-001-10"
+    },
+    {
+      "path": "tests/e2e/login/login-with-valid-credentials.spec.ts",
+      "line": 6,
+      "name": "REQ-001-1 正しい資格情報でログインできる",
+      "feature": "ログイン",
+      "nameId": "REQ-001-1",
+      "tagIds": [
+        "REQ-001-1"
+      ],
+      "classification": "bound",
+      "boundTo": "REQ-001-1"
+    },
+    {
+      "path": "tests/e2e/login/login-with-wrong-password.spec.ts",
+      "line": 21,
+      "name": "REQ-001-2 誤ったパスワードでは「${ERROR_MESSAGE}」と表示される",
+      "feature": "ログイン",
+      "nameId": "REQ-001-2",
+      "tagIds": [
+        "REQ-001-2"
+      ],
+      "classification": "bound",
+      "boundTo": "REQ-001-2"
+    },
+    {
+      "path": "tests/e2e/login/required-fields-empty.spec.ts",
+      "line": 8,
+      "name": "REQ-001-3 必須項目が空のときはエラーが表示される: メールアドレス",
+      "feature": "ログイン",
+      "nameId": "REQ-001-3",
+      "tagIds": [
+        "REQ-001-3"
+      ],
+      "classification": "bound",
+      "boundTo": "REQ-001-3"
+    },
+    {
+      "path": "tests/e2e/login/required-fields-empty.spec.ts",
+      "line": 20,
+      "name": "REQ-001-3 必須項目が空のときはエラーが表示される: パスワード",
+      "feature": "ログイン",
+      "nameId": "REQ-001-3",
+      "tagIds": [
+        "REQ-001-3"
+      ],
+      "classification": "bound",
+      "boundTo": "REQ-001-3"
+    },
+    {
+      "path": "tests/e2e/product-search/search-by-keyword.spec.ts",
+      "line": 8,
+      "name": "REQ-003-1 キーワードに一致する商品だけが表示される",
+      "feature": "商品検索",
+      "nameId": "REQ-003-1",
+      "tagIds": [
+        "REQ-003-1"
+      ],
+      "classification": "bound",
+      "boundTo": "REQ-003-1"
+    },
+    {
+      "path": "tests/e2e/product-search/search-no-match.spec.ts",
+      "line": 9,
+      "name": "REQ-003-2 一致する商品が無いときはメッセージが表示される",
+      "feature": "商品検索",
+      "nameId": "REQ-003-2",
+      "tagIds": [
+        "REQ-003-2"
+      ],
+      "classification": "bound",
+      "boundTo": "REQ-003-2"
+    }
+  ],
+  "duplicateIds": [],
+  "ungenerated": {
+    "requirements": [],
+    "scenarios": []
+  },
+  "resultsStartTime": "2026-09-27T11:12:00.000Z",
+  "latestResults": {
+    "REQ-001-1": "pass",
+    "REQ-001-2": "fail",
+    "REQ-001-3": "既知バグ(2026-09-15 ユーザー判断: パスワード空のバリデーションが無い。#130)",
+    "REQ-001-10": "未実行",
+    "REQ-002-1": "既知バグ(2026-09-01 ユーザー判断: ロックが掛からない。#123)",
+    "REQ-003-1": "fail(fail 指定だが通過)",
+    "REQ-003-2": "既知バグ(理由なし)"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "app": "会員サイト",
+  "roles": ["一般ユーザー(既定)"],
+  "baseline_data": "会員 1 名。商品 20 件",
+  "features": [
+    { "name": "商品検索", "slug": "product-search", "status": "定義済み", "summary": "キーワードで商品を探す", "includes": ["商品一覧の検索欄"] },
+    { "name": "ログイン", "slug": "login", "status": "テスト済み", "summary": "会員がメールアドレスとパスワードでサインインする", "includes": ["ログイン画面", "5 回失敗したときのロック"] },
+    { "name": "お知らせ", "slug": "news", "status": "未着手", "summary": "お知らせの一覧を読む", "includes": ["お知らせ一覧"] },
+    { "name": "メディア・ファイル", "slug": "media-files", "status": "対象外", "summary": "画像をアップロードする", "includes": ["アップロード画面"], "decided": "2026-08-31 ユーザー判断(アップロード無効のため)" }
+  ]
+}

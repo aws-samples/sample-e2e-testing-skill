@@ -1,0 +1,27 @@
+{
+  "config": {},
+  "suites": [
+    { "title": "auth.setup.ts", "specs": [{ "title": "一般ユーザーとして認証", "tags": [], "tests": [{ "expectedStatus": "passed", "status": "expected", "annotations": [] }] }], "suites": [] },
+    { "title": "e2e/login/REQ-001-1-valid-credentials-copy.spec.ts", "specs": [{ "title": "REQ-001-1 正しい資格情報でログインできる", "tags": ["REQ-001-1"], "tests": [{ "expectedStatus": "passed", "status": "expected", "annotations": [] }] }], "suites": [] },
+    { "title": "e2e/login/REQ-001-1-valid-credentials.spec.ts", "specs": [{ "title": "REQ-001-1 正しい資格情報でログインできる", "tags": ["REQ-001-1"], "tests": [{ "expectedStatus": "passed", "status": "expected", "annotations": [] }] }], "suites": [] },
+    {
+      "title": "e2e/login/REQ-001-2-required-fields-empty.spec.ts",
+      "specs": [
+        { "title": "REQ-001-2 必須項目が空のときはエラーが表示される: メールアドレス", "tags": ["REQ-001-2"], "tests": [{ "expectedStatus": "passed", "status": "expected", "annotations": [] }] },
+        {
+          "title": "REQ-001-2 必須項目が空のときはエラーが表示される: パスワード",
+          "tags": ["REQ-001-2"],
+          "tests": [{ "expectedStatus": "failed", "status": "expected", "annotations": [{ "type": "fail" }, { "type": "issue", "description": "2026-10-01 ユーザー判断: パスワード空のエラーが出ない。#123" }] }]
+        }
+      ],
+      "suites": []
+    },
+    {
+      "title": "e2e/login/REQ-001-3-case-insensitive-email.spec.ts",
+      "specs": [{ "title": "REQ-001-3 メールアドレスの大文字小文字を区別せずにログインできる", "tags": ["REQ-001-3"], "tests": [{ "expectedStatus": "failed", "status": "unexpected", "annotations": [{ "type": "fail" }, { "type": "issue", "description": "2026-09-20 ユーザー判断: 大文字のメールアドレスを拒む。#120" }] }] }],
+      "suites": []
+    },
+    { "title": "e2e/login/REQ-002-1-lock-after-five-failures.spec.ts", "specs": [{ "title": "REQ-002-1 5 回失敗するとロックされる", "tags": ["REQ-002-1"], "tests": [{ "expectedStatus": "passed", "status": "unexpected", "annotations": [] }] }], "suites": [] }
+  ],
+  "stats": { "startTime": "2026-10-16T01:30:00.000Z", "duration": 12345, "expected": 4, "unexpected": 2, "skipped": 0, "flaky": 0 }
+}

@@ -1,0 +1,4 @@
+# build.mjs は viewer/test/bundle.test.ts が作り直したものとバイト単位で比べるので、Windows の core.autocrlf=true でも LF のまま checkout する
+skills/e2e-testing/viewer/build.mjs text eol=lf
+# styles.css は esbuild の text loader で改行ごと build.mjs と index.html に入るので、同じ理由で LF にする
+viewer/src/styles.css text eol=lf

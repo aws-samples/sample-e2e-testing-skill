@@ -1,0 +1,17 @@
+{
+  "name": "sample-e2e-testing-skill",
+  "private": true,
+  "packageManager": "pnpm@12.11.2",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.mts\"",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome ci .",
+    "lint:fix": "biome check --write .",
+    "archive": "mkdir -p dist && git archive --format=zip --prefix=sample-e2e-testing-skill/ -o \"dist/sample-e2e-testing-skill-${ARCHIVE_VERSION:-$(git describe --tags --always)}.zip\" HEAD README.md LICENSE THIRD-PARTY-LICENSES skills/e2e-testing"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "^22.18.0",
+    "typescript": "^5.8.0"
+  }
+}

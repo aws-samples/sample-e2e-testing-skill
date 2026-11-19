@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "nodenext",
+    "target": "esnext",
+    "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": ["skills/e2e-testing/scripts/*.mts", "test/**/*.mts"],
+  "exclude": ["test/fixtures"]
+}

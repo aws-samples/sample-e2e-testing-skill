@@ -1,0 +1,265 @@
+{
+  "missingIds": [
+    {
+      "path": "features/login.feature",
+      "line": 5,
+      "reason": "Rule 外",
+      "feature": "ログイン",
+      "name": "REQ-001-1 パスワードを忘れたときに再設定メールを送れる"
+    },
+    {
+      "path": "features/login.feature",
+      "line": 18,
+      "reason": "タグ無し",
+      "feature": "ログイン",
+      "name": "REQ-001-3 誤ったパスワードではエラーが表示される"
+    },
+    {
+      "path": "features/login.feature",
+      "line": 24,
+      "reason": "タグの ID が複数",
+      "feature": "ログイン",
+      "name": "REQ-001-4 メールアドレスが空のときはエラーが表示される"
+    },
+    {
+      "path": "features/login.feature",
+      "line": 30,
+      "reason": "名前先頭に ID 無し",
+      "feature": "ログイン",
+      "name": "パスワードが空のときはエラーが表示される"
+    },
+    {
+      "path": "features/login.feature",
+      "line": 36,
+      "reason": "タグと名前の ID が異なる",
+      "feature": "ログイン",
+      "name": "REQ-001-8 メールアドレスの大文字小文字を区別せずにログインできる"
+    },
+    {
+      "path": "features/product-search.feature",
+      "line": 6,
+      "reason": "Rule に要件 ID 無し",
+      "feature": "商品検索",
+      "name": "REQ-002-1 価格の昇順で並べ替えられる"
+    },
+    {
+      "path": "features/product-search.feature",
+      "line": 20,
+      "reason": "要件番号が Rule と異なる",
+      "feature": "商品検索",
+      "name": "REQ-004-1 一致する商品が無いときはメッセージが表示される"
+    }
+  ],
+  "tests": [
+    {
+      "path": "tests/e2e/cart/add-to-cart.spec.ts",
+      "line": 6,
+      "name": "商品をカートに追加できる",
+      "feature": "cart",
+      "nameId": null,
+      "tagIds": [],
+      "classification": "orphan"
+    },
+    {
+      "path": "tests/e2e/login/login-with-valid-credentials-copy.spec.ts",
+      "line": 7,
+      "name": "REQ-001-2 正しい資格情報でログインできる",
+      "feature": "ログイン",
+      "nameId": "REQ-001-2",
+      "tagIds": [
+        "REQ-001-2"
+      ],
+      "classification": "bound",
+      "boundTo": "REQ-001-2"
+    },
+    {
+      "path": "tests/e2e/login/login-with-valid-credentials.spec.ts",
+      "line": 6,
+      "name": "REQ-001-2 正しい資格情報でログインできる",
+      "feature": "ログイン",
+      "nameId": "REQ-001-2",
+      "tagIds": [
+        "REQ-001-2"
+      ],
+      "classification": "bound",
+      "boundTo": "REQ-001-2"
+    },
+    {
+      "path": "tests/e2e/login/mismatched-ids.spec.ts",
+      "line": 8,
+      "name": "REQ-001-2 名前だけに ID がある",
+      "feature": "ログイン",
+      "nameId": "REQ-001-2",
+      "tagIds": [],
+      "classification": "mismatch"
+    },
+    {
+      "path": "tests/e2e/login/mismatched-ids.spec.ts",
+      "line": 14,
+      "name": "tag だけに ID がある",
+      "feature": "ログイン",
+      "nameId": null,
+      "tagIds": [
+        "REQ-001-2"
+      ],
+      "classification": "mismatch"
+    },
+    {
+      "path": "tests/e2e/login/mismatched-ids.spec.ts",
+      "line": 20,
+      "name": "REQ-001-2 名前と tag の ID が異なる",
+      "feature": "ログイン",
+      "nameId": "REQ-001-2",
+      "tagIds": [
+        "REQ-001-3"
+      ],
+      "classification": "mismatch"
+    },
+    {
+      "path": "tests/e2e/login/mismatched-ids.spec.ts",
+      "line": 26,
+      "name": "REQ-001-2 tag が 2 つある",
+      "feature": "ログイン",
+      "nameId": "REQ-001-2",
+      "tagIds": [
+        "REQ-001-2",
+        "REQ-001-3"
+      ],
+      "classification": "mismatch"
+    },
+    {
+      "path": "tests/e2e/login/old-login.spec.ts",
+      "line": 6,
+      "name": "ログインできる",
+      "feature": "ログイン",
+      "nameId": null,
+      "tagIds": [],
+      "classification": "orphan"
+    },
+    {
+      "path": "tests/e2e/login/password-reset.spec.ts",
+      "line": 6,
+      "name": "REQ-009-1 パスワードを再設定できる",
+      "feature": "ログイン",
+      "nameId": "REQ-009-1",
+      "tagIds": [
+        "REQ-009-1"
+      ],
+      "classification": "unknown"
+    },
+    {
+      "path": "tests/e2e/stray.spec.ts",
+      "line": 4,
+      "name": "商品一覧を表示できる",
+      "feature": "—",
+      "nameId": null,
+      "tagIds": [],
+      "classification": "orphan"
+    }
+  ],
+  "duplicateIds": [
+    {
+      "id": "REQ-001",
+      "source": "rule",
+      "feature": "ログイン",
+      "places": [
+        "features/login.feature L10",
+        "features/login.feature L42"
+      ]
+    },
+    {
+      "id": "REQ-003-1",
+      "source": "scenario",
+      "feature": "商品検索",
+      "places": [
+        "features/product-search.feature L14",
+        "features/product-search.feature L27"
+      ]
+    },
+    {
+      "id": "REQ-001-2",
+      "source": "spec",
+      "feature": "ログイン",
+      "places": [
+        "tests/e2e/login/login-with-valid-credentials-copy.spec.ts",
+        "tests/e2e/login/login-with-valid-credentials.spec.ts"
+      ]
+    }
+  ],
+  "ungenerated": {
+    "requirements": [
+      {
+        "id": "REQ-001",
+        "feature": "ログイン",
+        "path": "features/login.feature",
+        "line": 42
+      },
+      {
+        "id": "REQ-003",
+        "feature": "商品検索",
+        "path": "features/product-search.feature",
+        "line": 11
+      },
+      {
+        "id": "REQ-005",
+        "feature": "商品検索",
+        "path": "features/product-search.feature",
+        "line": 33
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "REQ-001-9",
+        "name": "別の端末でログインすると前回のセッションが無効になる",
+        "feature": "ログイン",
+        "path": "features/login.feature",
+        "line": 45
+      },
+      {
+        "id": "REQ-003-1",
+        "name": "キーワードに一致する商品だけが表示される",
+        "feature": "商品検索",
+        "path": "features/product-search.feature",
+        "line": 14
+      },
+      {
+        "id": "REQ-003-1",
+        "name": "キーワードの前後の空白を無視して検索できる",
+        "feature": "商品検索",
+        "path": "features/product-search.feature",
+        "line": 27
+      }
+    ]
+  },
+  "missingRuleIds": [
+    {
+      "path": "features/product-search.feature",
+      "line": 3,
+      "name": "検索結果を価格で並べ替えられる",
+      "feature": "商品検索"
+    }
+  ],
+  "featureMapRows": [
+    {
+      "kind": "feature-map に無い .feature",
+      "feature": "お気に入り",
+      "target": "features/wishlist.feature(feature-map に slug が wishlist の機能が無い)"
+    },
+    {
+      "kind": ".feature の無い機能",
+      "feature": "お知らせ",
+      "target": "features/news.feature が無い(状態が テスト済み)"
+    },
+    {
+      "kind": "slug の重なり",
+      "feature": "ログイン / ソーシャルログイン",
+      "target": "login: features[0], candidates[0]"
+    }
+  ],
+  "resultsStartTime": "2026-09-28T02:30:00.000Z",
+  "latestResults": {
+    "REQ-001-2": "pass",
+    "REQ-001-9": "未生成",
+    "REQ-003-1": "未生成"
+  }
+}

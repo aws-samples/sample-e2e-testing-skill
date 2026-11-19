@@ -1,0 +1,7 @@
+{
+  "app": "会員サイト",
+  "features": [
+    { "name": "ログイン", "slug": "login", "status": "テスト済み", "summary": "会員がメールアドレスとパスワードでサインインする", "includes": ["ログイン画面"] },
+    { "name": "商品検索", "slug": "product-search", "status": "定義済み", "summary": "キーワードで商品を探す", "includes": ["商品一覧の検索欄"] }
+  ]
+}

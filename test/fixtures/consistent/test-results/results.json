@@ -1,0 +1,484 @@
+{
+  "config": {
+    "configFile": "/home/user/app/playwright.config.ts",
+    "rootDir": "/home/user/app/tests",
+    "version": "1.50.0",
+    "workers": 1,
+    "projects": [
+      { "id": "setup", "name": "setup", "testDir": "/home/user/app/tests", "testMatch": ["/.*\\.setup\\.ts/"], "retries": 0, "timeout": 30000 },
+      { "id": "chromium", "name": "chromium", "testDir": "/home/user/app/tests", "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"], "retries": 0, "timeout": 30000 }
+    ]
+  },
+  "suites": [
+    {
+      "title": "auth.setup.ts",
+      "file": "auth.setup.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "authenticate as user",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1820,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T11:12:00.412Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1a0b2c3d4e5f60718293-a4b5c6d7e8f901234567",
+          "file": "auth.setup.ts",
+          "line": 6,
+          "column": 6
+        }
+      ]
+    },
+    {
+      "title": "seed.spec.ts",
+      "file": "seed.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "seed: 一般ユーザー",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 940,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T11:12:02.301Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2b1c3d4e5f60718293a4-b5c6d7e8f9012345678a",
+          "file": "seed.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/login/lock-after-five-failures.spec.ts",
+      "file": "e2e/login/lock-after-five-failures.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REQ-002-1 5回失敗するとロックされる",
+          "ok": true,
+          "tags": ["REQ-002-1"],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                { "type": "fail" },
+                { "type": "issue", "description": "2026-09-01 ユーザー判断: ロックが掛からない。#123" }
+              ],
+              "expectedStatus": "failed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6210,
+                  "error": {
+                    "message": "Error: expect(locator).toHaveText(expected) failed\n\nLocator: getByRole('alert')\nExpected string: \"アカウントがロックされました。15分後に再試行してください\"\nReceived string: \"メールアドレスまたはパスワードが違います\"",
+                    "stack": "Error: expect(locator).toHaveText(expected) failed\n    at /home/user/app/tests/e2e/login/lock-after-five-failures.spec.ts:19:43"
+                  },
+                  "errors": [
+                    { "message": "Error: expect(locator).toHaveText(expected) failed\n\nLocator: getByRole('alert')\nExpected string: \"アカウントがロックされました。15分後に再試行してください\"\nReceived string: \"メールアドレスまたはパスワードが違います\"" }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T11:12:03.512Z",
+                  "annotations": [
+                    { "type": "fail" },
+                    { "type": "issue", "description": "2026-09-01 ユーザー判断: ロックが掛からない。#123" }
+                  ],
+                  "attachments": [],
+                  "errorLocation": { "file": "/home/user/app/tests/e2e/login/lock-after-five-failures.spec.ts", "line": 19, "column": 43 }
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3c2d4e5f60718293a4b5-c6d7e8f9012345678a9b",
+          "file": "e2e/login/lock-after-five-failures.spec.ts",
+          "line": 6,
+          "column": 6
+        }
+      ]
+    },
+    {
+      "title": "e2e/login/login-case-insensitive-email.spec.ts",
+      "file": "e2e/login/login-case-insensitive-email.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REQ-001-10 メールアドレスの大文字小文字を区別せずにログインできる",
+          "ok": true,
+          "tags": ["REQ-001-10", "smoke"],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [{ "type": "skip" }],
+              "expectedStatus": "skipped",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T11:12:09.803Z",
+                  "annotations": [{ "type": "skip" }],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "4d3e5f60718293a4b5c6-d7e8f9012345678a9b0c",
+          "file": "e2e/login/login-case-insensitive-email.spec.ts",
+          "line": 6,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/login/login-with-valid-credentials.spec.ts",
+      "file": "e2e/login/login-with-valid-credentials.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REQ-001-1 正しい資格情報でログインできる",
+          "ok": true,
+          "tags": ["REQ-001-1"],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1345,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T11:12:09.850Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5e4f60718293a4b5c6d7-e8f9012345678a9b0c1d",
+          "file": "e2e/login/login-with-valid-credentials.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/login/login-with-wrong-password.spec.ts",
+      "file": "e2e/login/login-with-wrong-password.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "ログイン",
+          "file": "e2e/login/login-with-wrong-password.spec.ts",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "REQ-001-2 誤ったパスワードでは「メールアドレスまたはパスワードが違います」と表示される",
+              "ok": false,
+              "tags": ["REQ-001-2"],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5104,
+                      "error": {
+                        "message": "Error: expect(locator).toHaveText(expected) failed\n\nLocator: getByRole('alert')\nExpected string: \"メールアドレスまたはパスワードが違います\"\nReceived string: \"ログインに失敗しました\"",
+                        "stack": "Error: expect(locator).toHaveText(expected) failed\n    at /home/user/app/tests/e2e/login/login-with-wrong-password.spec.ts:29:43"
+                      },
+                      "errors": [
+                        { "message": "Error: expect(locator).toHaveText(expected) failed\n\nLocator: getByRole('alert')\nExpected string: \"メールアドレスまたはパスワードが違います\"\nReceived string: \"ログインに失敗しました\"" }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-27T11:12:11.220Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": { "file": "/home/user/app/tests/e2e/login/login-with-wrong-password.spec.ts", "line": 29, "column": 43 }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "6f5071829304b5c6d7e8-f9012345678a9b0c1d2e",
+              "file": "e2e/login/login-with-wrong-password.spec.ts",
+              "line": 21,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "e2e/login/required-fields-empty.spec.ts",
+      "file": "e2e/login/required-fields-empty.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REQ-001-3 必須項目が空のときはエラーが表示される: メールアドレス",
+          "ok": true,
+          "tags": ["REQ-001-3"],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1102,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T11:12:16.401Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "706182930a4b5c6d7e8f-9012345678a9b0c1d2e3",
+          "file": "e2e/login/required-fields-empty.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "REQ-001-3 必須項目が空のときはエラーが表示される: パスワード",
+          "ok": true,
+          "tags": ["REQ-001-3"],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                { "type": "fail" },
+                { "type": "issue", "description": "2026-09-15 ユーザー判断: パスワード空のバリデーションが無い。#130" }
+              ],
+              "expectedStatus": "failed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5088,
+                  "error": {
+                    "message": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('パスワードを入力してください')\nExpected: visible\nTimeout: 5000ms",
+                    "stack": "Error: expect(locator).toBeVisible() failed\n    at /home/user/app/tests/e2e/login/required-fields-empty.spec.ts:26:63"
+                  },
+                  "errors": [
+                    { "message": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('パスワードを入力してください')\nExpected: visible\nTimeout: 5000ms" }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T11:12:17.560Z",
+                  "annotations": [
+                    { "type": "fail" },
+                    { "type": "issue", "description": "2026-09-15 ユーザー判断: パスワード空のバリデーションが無い。#130" }
+                  ],
+                  "attachments": [],
+                  "errorLocation": { "file": "/home/user/app/tests/e2e/login/required-fields-empty.spec.ts", "line": 26, "column": 63 }
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8172930a4b5c6d7e8f90-12345678a9b0c1d2e3f4",
+          "file": "e2e/login/required-fields-empty.spec.ts",
+          "line": 16,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "e2e/product-search/search-by-keyword.spec.ts",
+      "file": "e2e/product-search/search-by-keyword.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REQ-003-1 キーワードに一致する商品だけが表示される",
+          "ok": false,
+          "tags": ["REQ-003-1"],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [{ "type": "fail" }],
+              "expectedStatus": "failed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1477,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T11:12:22.712Z",
+                  "annotations": [{ "type": "fail" }],
+                  "attachments": []
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "92a30b4c5d6e7f809112-345678a9b0c1d2e3f4a5",
+          "file": "e2e/product-search/search-by-keyword.spec.ts",
+          "line": 6,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/product-search/search-no-match.spec.ts",
+      "file": "e2e/product-search/search-no-match.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REQ-003-2 一致する商品が無いときはメッセージが表示される",
+          "ok": true,
+          "tags": ["REQ-003-2"],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [{ "type": "fail" }],
+              "expectedStatus": "failed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5061,
+                  "error": {
+                    "message": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('該当する商品はありません')\nExpected: visible\nTimeout: 5000ms",
+                    "stack": "Error: expect(locator).toBeVisible() failed\n    at /home/user/app/tests/e2e/product-search/search-no-match.spec.ts:15:60"
+                  },
+                  "errors": [
+                    { "message": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('該当する商品はありません')\nExpected: visible\nTimeout: 5000ms" }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T11:12:24.305Z",
+                  "annotations": [{ "type": "fail" }],
+                  "attachments": [],
+                  "errorLocation": { "file": "/home/user/app/tests/e2e/product-search/search-no-match.spec.ts", "line": 15, "column": 60 }
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3b40c5d6e7f80912234-5678a9b0c1d2e3f4a5b6",
+          "file": "e2e/product-search/search-no-match.spec.ts",
+          "line": 7,
+          "column": 6
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-27T11:12:00.000Z",
+    "duration": 29874.3,
+    "expected": 6,
+    "skipped": 1,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

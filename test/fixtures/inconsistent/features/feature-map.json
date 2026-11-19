@@ -1,0 +1,11 @@
+{
+  "app": "会員サイト",
+  "features": [
+    { "name": "ログイン", "slug": "login", "status": "テスト済み", "summary": "会員がサインインする", "includes": ["ログイン画面"] },
+    { "name": "商品検索", "slug": "product-search", "status": "定義済み", "summary": "キーワードで商品を探す", "includes": ["商品一覧"] },
+    { "name": "お知らせ", "slug": "news", "status": "テスト済み", "summary": "お知らせの一覧を読む", "includes": ["お知らせ一覧"] }
+  ],
+  "candidates": [
+    { "name": "ソーシャルログイン", "slug": "login", "reason": "資料にあるが画面に無い" }
+  ]
+}

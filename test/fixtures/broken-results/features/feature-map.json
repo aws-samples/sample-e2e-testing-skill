@@ -1,0 +1,6 @@
+{
+  "app": "会員サイト",
+  "features": [
+    { "name": "商品検索", "slug": "product-search", "status": "定義済み", "summary": "キーワードで商品を探す", "includes": ["商品一覧の検索欄"] }
+  ]
+}

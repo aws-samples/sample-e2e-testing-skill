@@ -1,0 +1,6 @@
+# viewer の開発用の pnpm の設定。
+#
+# allowBuilds: esbuild のインストールスクリプトを動かさない。pnpm 12 は、許可も拒否もしていないスクリプトがあると install を失敗させる。
+# スクリプトを動かさなくても、bundle.mts の esbuild の API と、Storybook とテストは動く。
+allowBuilds:
+  esbuild: false

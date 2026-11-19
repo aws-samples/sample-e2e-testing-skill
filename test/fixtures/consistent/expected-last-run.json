@@ -1,0 +1,28 @@
+{
+  "runId": "20260927-201200",
+  "startTime": "2026-09-27T11:12:00.000Z",
+  "scenarios": {
+    "REQ-001-1": {
+      "result": "pass"
+    },
+    "REQ-001-2": {
+      "result": "fail"
+    },
+    "REQ-001-3": {
+      "result": "known-bug",
+      "reason": "2026-09-15 ユーザー判断: パスワード空のバリデーションが無い。#130"
+    },
+    "REQ-002-1": {
+      "result": "known-bug",
+      "reason": "2026-09-01 ユーザー判断: ロックが掛からない。#123"
+    },
+    "REQ-003-1": {
+      "result": "fail",
+      "reason": "fail 指定だが通過"
+    },
+    "REQ-003-2": {
+      "result": "known-bug",
+      "reason": "理由なし"
+    }
+  }
+}

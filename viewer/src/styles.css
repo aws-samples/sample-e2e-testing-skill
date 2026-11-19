@@ -1,0 +1,276 @@
+/* 色。紙(地)・墨(文字と太い罫)・青鉛筆(キーワード・リンク・フォーカス枠・つまみ)・要件の地・罫・薄墨(slug と補足)・朱(fail)・確認したいことの地 */
+:root {
+  --paper: #ffffff;
+  --ink: #1d2433;
+  --pencil: #2457a6;
+  --requirement: #eef3fb;
+  --rule: #c9d3e3;
+  --muted: #5b6475;
+  --fail: #b3261e;
+  --question: #fff4d6;
+}
+/* 英字と数字は同梱の書体、日本語は OS の書体。数字の幅をそろえ、ID と件数の桁を縦にそろえる */
+body {
+  font-family:
+    "Atkinson Hyperlegible Next", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", Meiryo, "Noto Sans CJK JP",
+    "Noto Sans JP", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 2rem;
+  background: var(--paper);
+  color: var(--ink);
+}
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+/* ページの先頭の件数・テストの結果・CSV へのリンク・保存のしかた */
+main > p {
+  margin: 0.25rem 0;
+}
+.note {
+  font-size: 14px;
+  color: var(--muted);
+}
+a {
+  color: var(--pencil);
+}
+a:focus-visible {
+  outline: 2px solid var(--pencil);
+  outline-offset: 2px;
+}
+/* 結果の fail と、件数の中の fail N */
+.fail {
+  color: var(--fail);
+  font-weight: 700;
+}
+/* 機能名と候補の名前の下に小さく出す slug */
+.slug {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+}
+/* 一覧表の説明。狭い画面で表を中身の幅にしても、1 行に伸ばさない */
+.summary {
+  max-width: 24em;
+}
+/* シナリオの結果の理由と、テストファイルへのリンク。パスは空白が無いので、列の幅に収まるようどこででも折り返す */
+.reason {
+  font-size: 14px;
+}
+.spec-link {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+/* 機能の一覧表と、機能ごとの要件とシナリオの表の外枠。列を広げて表が画面より広くなったら、ここで横にスクロールする */
+.table-scroll {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+table {
+  border-collapse: collapse;
+}
+/* break-word は自動の列の幅を変えず、列の幅を狭めたときだけ長い語を折り返す。縦の罫は、幅を変えられる列の境目が見えるよう罫の色で残す */
+th,
+td {
+  border: 1px solid var(--rule);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: break-word;
+}
+/* 見出しは地を付けず、墨の太字と下の太い罫で本文と分ける */
+th {
+  position: relative;
+  color: var(--ink);
+  font-weight: 700;
+  border-bottom: 2px solid var(--ink);
+}
+/* 件数は右に寄せ、桁をそろえる */
+th.number,
+td.number {
+  text-align: right;
+}
+/* 列の幅を変えるつまみ。column-resize.ts が見出しのセルの右端に足す。普段は罫の色の細い線、指したときとフォーカスで青鉛筆の太い線にする */
+.col-resize {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0.5rem;
+  cursor: col-resize;
+  touch-action: none;
+}
+.col-resize::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background: var(--rule);
+}
+.col-resize:focus-visible {
+  outline: 2px solid var(--pencil);
+  outline-offset: -2px;
+}
+.col-resize:hover::after,
+.col-resize:focus-visible::after {
+  width: 2px;
+  background: var(--pencil);
+}
+/* 手順の中の DataTable と Examples の表。外の表の列の幅に収まるよう、長いセルはどこででも折り返す */
+.step-table {
+  margin: 0.25rem 0;
+}
+.step-table th,
+.step-table td {
+  padding: 0.25rem 0.5rem;
+  overflow-wrap: anywhere;
+}
+/* 要件の行は淡い青の地と上の太い罫で、配下のシナリオの行と分ける。手順の中の表のセルには当てない */
+tr.requirement > td {
+  background: var(--requirement);
+  border-top: 2px solid var(--ink);
+}
+/* 機能の節の要件とシナリオの表は、ページの幅いっぱいに描く。列の幅は ViewerPage.tsx の colgroup で決め、中身では変えない */
+section > .table-scroll > table {
+  width: 100%;
+  table-layout: fixed;
+}
+/* 機能の節の表の ID(1 列目)は折り返さない。REQ-001-1 が REQ-001- と 1 に分かれると、別の ID に読める。手順の中の表の 1 列目は含めない */
+section > .table-scroll > table > tbody > tr > td:first-child {
+  white-space: nowrap;
+}
+.text {
+  white-space: pre-wrap;
+}
+/* 行頭のキーワードと本文の 2 列。キーワードの列はそのセルで最長のキーワードの幅にして右に寄せ、本文・手順の表・DocString の左端を 1 本の線にそろえる。
+   区切りの空白をグリッドの項目にしないよう、空白は詰める(本文の中の空白は .keyword-text で保つ) */
+.keyword-grid {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 0.5rem;
+  align-items: baseline;
+  white-space: normal;
+}
+.keyword-line {
+  display: contents;
+}
+.keyword {
+  grid-column: 1;
+  text-align: right;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--pencil);
+}
+.keyword-text {
+  grid-column: 2;
+  white-space: pre-wrap;
+}
+/* DocString。区切り行を含めて改行を保ち、文字は周りと同じにする */
+.doc-string {
+  margin: 0;
+  font-family: inherit;
+  white-space: pre-wrap;
+}
+.keyword-grid > .step-table,
+.keyword-grid > .doc-string {
+  grid-column: 2;
+}
+/* 機能の節。上の太い罫で前の節と分ける */
+section {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 3px solid var(--ink);
+}
+h2 {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 0.75rem;
+}
+h2 .status {
+  margin-left: 0.5rem;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.status-mark {
+  margin-right: 0.25em;
+}
+/* 照合ツールの不整合の節と、機能にするか決まっていないものの表。機能の節より前に置くので、上の余白で前のものと分ける */
+.notices > h2,
+.candidates > h2 {
+  margin-top: 2rem;
+}
+/* 対象と根拠には、空白の無い長いパスや URL が入りうる。どこででも折り返し、表を外枠の幅に収める */
+.notices td:last-child,
+.candidates td:last-child {
+  overflow-wrap: anywhere;
+}
+/* 640px 以上では、不整合の種別と機能を 1 行に保ち、対象の列を折り返す。640px 未満では、どの列も折り返して画面の幅に収める */
+@media (min-width: 640px) {
+  .notices td:not(:last-child) {
+    white-space: nowrap;
+  }
+}
+/* 機能の一覧表は説明の列だけを折り返す。説明の列を足して表が外枠の幅に届いても、機能名・状態・件数・結果・見出しを 1 行に保つ */
+main > .table-scroll > table th,
+main > .table-scroll > table td {
+  white-space: nowrap;
+}
+main > .table-scroll > table .summary {
+  white-space: normal;
+}
+/* 機能の節の概要・含む・含まない・根拠・確認したいこと・決めたこと・Background・引用元。名前と値の 2 列 */
+.details {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 1.5rem;
+  row-gap: 0.5rem;
+  align-items: baseline;
+  margin: 0 0 1rem;
+}
+.details > div {
+  display: contents;
+}
+.details dt {
+  font-size: 14px;
+  color: var(--muted);
+}
+.details dd {
+  margin: 0;
+}
+/* 確認したいことは、地の色で目立たせる */
+.details dd.questions {
+  background: var(--question);
+  padding: 0.25rem 0.5rem;
+}
+/* 含む・含まない・根拠・確認したいことと、候補の根拠の箇条書き。余白を詰める */
+.details ul,
+.candidates ul {
+  margin: 0;
+  padding-left: 1.25em;
+}
+/*
+  640px 未満では名前の下に値を積む。表は画面の幅に縮めず、外枠で横にスクロールする。
+  機能の一覧表は中身の幅を保ち、機能の節の表は 30:40:15:15 の列が読める幅を下限にする
+*/
+@media (max-width: 639.98px) {
+  .details {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.25rem;
+  }
+  main > .table-scroll > table {
+    width: max-content;
+  }
+  section > .table-scroll > table {
+    min-width: 48rem;
+  }
+}

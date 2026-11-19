@@ -1,0 +1,20 @@
+{
+  "runId": "20261016-103000",
+  "startTime": "2026-10-16T01:30:00.000Z",
+  "scenarios": {
+    "REQ-001-1": {
+      "result": "pass"
+    },
+    "REQ-001-2": {
+      "result": "known-bug",
+      "reason": "2026-10-01 ユーザー判断: パスワード空のエラーが出ない。#123"
+    },
+    "REQ-001-3": {
+      "result": "fail",
+      "reason": "fail 指定だが通過"
+    },
+    "REQ-002-1": {
+      "result": "fail"
+    }
+  }
+}

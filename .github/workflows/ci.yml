@@ -1,0 +1,50 @@
+# main への push と Pull Request で lint・typecheck・test と viewer(リポジトリ直下の viewer/ の typecheck と test)を実行する
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# GITHUB_TOKEN はリポジトリの読み取りだけに絞る
+permissions:
+  contents: read
+
+jobs:
+  # 照合ツール。Lint と整形の検査(biome ci)、型検査(tsc --noEmit)、テスト(node --test)。
+  # .mts は Node の型ストリップでフラグなしに直接実行するので、Node.js 22.18 以降が必要。22 は 22.x の最新を指す
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      # pnpm の版は package.json の packageManager から読む
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4.3.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run lint
+      - run: pnpm run typecheck
+      - run: pnpm test
+
+  # ビューア。ビルドのテストは、コミットされた skills/e2e-testing/viewer/build.mjs を実行する。
+  # bundle のテストは、bundle.mts で作り直したものとコミットされた build.mjs がバイト単位で一致するかを確かめる。
+  # ストーリーのテストは Chromium で動くので、テストの前に Playwright の Chromium と、それが要る OS のパッケージを入れる
+  viewer:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: viewer
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4.3.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: viewer/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run typecheck
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test
