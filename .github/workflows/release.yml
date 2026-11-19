@@ -21,7 +21,18 @@ jobs:
       - run: npm run archive
         env:
           ARCHIVE_VERSION: ${{ github.ref_name }}
-      - run: gh release create "$TAG" dist/*.zip --title "$TAG" --notes "配布用 zip(README とスキル一式)。展開して README の手順でインストールする。"
+      - run: |
+          cat > notes.md <<EOF
+          ## インストール
+
+          1. 下の Assets から \`sample-e2e-testing-skill-${TAG}.zip\` をダウンロードして展開します
+          2. zip を展開した場所(\`sample-e2e-testing-skill\` ディレクトリができた場所)で、次のコマンドを実行します
+
+             \`\`\`
+             npx skills add ./sample-e2e-testing-skill/skills/e2e-testing -g
+             \`\`\`
+          EOF
+          gh release create "$TAG" dist/*.zip --title "$TAG" --notes-file notes.md
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.ref_name }}

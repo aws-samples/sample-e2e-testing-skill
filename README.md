@@ -94,12 +94,15 @@ flowchart TD
 
 ## 本スキルのインストール
 
-このリポジトリをcloneし、[skills CLI](https://github.com/vercel-labs/skills)でインストールします。`-g`はユーザー単位でインストールする指定です。
+1. [Releases](https://github.com/aws-samples/sample-e2e-testing-skill/releases/latest)のAssetsから`sample-e2e-testing-skill-<バージョン>.zip`をダウンロードして展開します
 
-```bash
-git clone <このリポジトリの URL>
-npx skills add ./sample-e2e-testing-skill/skills/e2e-testing -g
-```
+2. zipを展開した場所(`sample-e2e-testing-skill`ディレクトリができた場所)で、[skills CLI](https://github.com/vercel-labs/skills)を使ってインストールします。`-g`はユーザー単位でインストールする指定です
+
+   ```bash
+   npx skills add ./sample-e2e-testing-skill/skills/e2e-testing -g
+   ```
+
+   スキルはユーザーのディレクトリにコピーされるので、展開したディレクトリは消してかまいません。新しいバージョンにするときは、新しいzipで同じ手順を繰り返します。
 
 ## 使い方
 
